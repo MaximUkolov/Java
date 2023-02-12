@@ -41,3 +41,41 @@
 //           }
 // }
 // }
+
+
+
+
+
+
+// Реализовать простой калькулятор Введите число 2 Введите операцию 1 + 2 - 3 * 4 
+// Введите число 2 2 + 2 = 4
+
+import java.util.Scanner;
+public class hw1{
+    public static void main(String[] args) {
+        double num1;
+        double num2;
+        double res;
+        char op;
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Введите два числа: ");
+        num1 = reader.nextDouble();
+        num2 = reader.nextDouble();
+        System.out.print("\nВведите действие (+, -, *, /): ");
+        op = reader.next().charAt(0);
+        switch(op) {                                                            //Сравниваем переменную со списком значений
+           case '+': res = num1 + num2;
+              break;
+           case '-': res = num1 - num2;
+              break;
+           case '*': res = num1 * num2;
+              break;
+           case '/': res = num1 / num2;
+              break;
+           default:  System.out.printf("Ошибка, введите верное действие");
+              return;
+        }
+        System.out.print("\nОтвет:\n");
+        System.out.printf(num1 + " " + op + " " + num2 + " = " + "%.2f",res);     //%.2f - 2 знака после запятой
+     }
+  }
