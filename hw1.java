@@ -16,6 +16,7 @@ public class hw1 {
         for (int i = 1; i <= n; i++) {
             sum = sum + i;
             mult = mult * i;
+            scanner.close();
         }
         System.out.println("Сумма n натуральных чисел: " + sum);
         System.out.println("Произведение n натуральных чисел: " + mult);
