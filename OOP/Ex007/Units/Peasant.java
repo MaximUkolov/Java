@@ -1,9 +1,9 @@
-package Units;
+import java.util.ArrayList;
 
-public class Peasant extends Unit {
+public class Peasant extends BaseHero {
 
-    public Peasant(String name) {
-        super(250, 255, 20, name);
+    public Peasant(String name, int x, int y) {
+        super(250, 255, 0, 0, 20, name, x, y);
     }
 
     @Override
@@ -11,10 +11,7 @@ public class Peasant extends Unit {
         return "Peasant";
     }
 
-    // @Override
-    // public void step() {
-    // // TODO Auto-generated method stub
-    // throw new UnsupportedOperationException("Unimplemented method 'step'");
-    // }
-
+    @Override
+    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> friends) {
+    }
 }
