@@ -12,25 +12,27 @@ public abstract class ShooterClass extends BaseHero{
     @Override
     public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> friends) {
         if (this.ammo > 0 && this.hp > 0) {
-            System.out.println("can shoot");
+    
+            BaseHero target = team.get(0);
+            double minDistance = this.position.getDistance(team.get(0));
+
             for (BaseHero unit : team) {
-                if (unit.hp > 0) {
-                    this.attack(unit, this.damage, this.maxDamage);
-                    this.ammo--;
-                    break;
-                } else
-                    System.out.println("skip step");
+                if(this.position.getDistance(unit)<minDistance){
+                    minDistance = this.position.getDistance(unit);
+                    target = unit;
+                }
             }
+
+            this.attack(target, this.damage, this.maxDamage);
+            this.ammo--;
         }
 
-        System.out.println(toString());
         for (BaseHero unit : friends) {
             if (unit.getInfo().equals("Peasant")) {
                 this.ammo++;
                 break;
             }
         }
-        System.out.println(toString());
     }
 
     @Override
