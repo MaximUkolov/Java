@@ -9,13 +9,14 @@ public class Program {
     public static ArrayList<BaseHero> darkSide = new ArrayList<>();
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Init();
+        try (Scanner sc = new Scanner(System.in)) {
+            Init();
 
-        while(true){
-            ConsoleView.view();
-            sc.nextLine();
-            step();
+            while(true){
+                ConsoleView.view();
+                sc.nextLine();
+                step();
+            }
         }
     }
 
